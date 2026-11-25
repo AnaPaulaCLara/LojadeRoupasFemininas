@@ -1,0 +1,400 @@
+/* =========================================
+   VARIÁVEIS E RESET
+   ========================================= */
+:root {
+    --cor-primaria: #b86b77;       /* Rosé sofisticado */
+    --cor-primaria-hover: #9e5460;
+    --cor-fundo: #fdfaf8;          /* Off-white quente */
+    --cor-branco: #ffffff;
+    --cor-texto: #2c2728;          /* Grafite suave */
+    --cor-texto-suave: #6e6567;
+    --cor-borda: #ece3e0;
+    --cor-whatsapp: #25d366;
+    --cor-whatsapp-hover: #1ebe5d;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --raio: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+header {
+    background-color: var(--cor-branco);
+    border-bottom: 1px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--cor-texto);
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--cor-primaria);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+    transition: color 0.3s;
+    padding-bottom: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.ativo {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* =========================================
+   COMPONENTES E BOTÕES
+   ========================================= */
+main {
+    flex: 1;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.titulo-secao h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.titulo-secao p {
+    color: var(--cor-texto-suave);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--raio);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primario {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+.btn-primario:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.btn-outline:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+.btn-whatsapp {
+    background-color: var(--cor-whatsapp);
+    color: var(--cor-branco);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--cor-whatsapp-hover);
+}
+
+/* =========================================
+   HERO BANNER (HOME)
+   ========================================= */
+.hero {
+    background: linear-gradient(rgba(44, 39, 40, 0.55), rgba(44, 39, 40, 0.55)),
+                url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 7rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    opacity: 0.9;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================================
+   CARDS DE PRODUTOS E DIFERENCIAIS
+   ========================================= */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+.card-titulo {
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+}
+
+.card-specs {
+    font-size: 0.85rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 1rem;
+}
+
+.card-preco {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--cor-texto);
+    margin-top: auto;
+}
+
+/* =========================================
+   SOBRE & DOWNLOAD BOX
+   ========================================= */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.sobre-img {
+    width: 100%;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+.download-box {
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-left: 5px solid var(--cor-primaria);
+    padding: 2rem;
+    border-radius: var(--raio);
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.feedback-download {
+    display: none;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #1e7e34;
+    font-weight: 600;
+}
+
+/* =========================================
+   FORMULÁRIO DE CONTATO
+   ========================================= */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+}
+
+.form-box {
+    background-color: var(--cor-branco);
+    padding: 2rem;
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra);
+}
+
+.form-grupo {
+    margin-bottom: 1.2rem;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    font-size: 0.95rem;
+    background-color: var(--cor-fundo);
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    background-color: var(--cor-branco);
+}
+
+/* =========================================
+   BOTÃO FLUTUANTE WHATSAPP & RODAPÉ
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: var(--cor-whatsapp);
+    color: var(--cor-branco);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 999;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+}
+
+footer {
+    background-color: var(--cor-texto);
+    color: var(--cor-branco);
+    padding: 2.5rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .sobre-grid,
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
